@@ -60,14 +60,8 @@ sub color_text {
 	# Check to see if we can and should proceed
 	return unless $enabled && is_color_name($cname) && !is_service($win_item);
 
-	my $colored_text;
-	if(substr($text, 0, 1) =~ /[0-9]/) {
-		# Use a no-op control sequence to separate the color code
-		# from the number in the message.
-		$colored_text = "\cC" . $colors{$cname} . "\cB\cB" . $text;
-	} else {
-		$colored_text = "\cC" . $colors{$cname} . $text;
-	}
+	# Use a zero-width space to separate the control code from the message
+	my $colored_text = "\cC" . $colors{$cname} . "\N{U+200B}" . $text;
 	Irssi::signal_continue($colored_text, $server, $win_item);
 }
 
