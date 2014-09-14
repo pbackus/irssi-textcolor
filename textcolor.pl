@@ -2,7 +2,7 @@ use strict;
 use warnings;
 use Irssi;
 
-our $VERSION = '0.1.0';
+our $VERSION = '0.1.1';
 our %IRSSI = (
 	authors     => 'Paul Backus',
 	contact     => 'snarwin@gmail.com',
