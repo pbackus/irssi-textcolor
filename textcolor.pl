@@ -58,7 +58,8 @@ sub color_text {
 	my $enabled = Irssi::settings_get_bool('textcolor_enable');
 
 	# Check to see if we can and should proceed
-	return unless $enabled && is_color_name($cname) && !is_service($win_item);
+	return unless $enabled && is_color_name($cname) &&
+	              !is_service($win_item) && ($text ne "");
 
 	# Use a zero-width space to separate the control code from the message
 	my $colored_text = "\cC" . $colors{$cname} . "\N{U+200B}" . $text;
