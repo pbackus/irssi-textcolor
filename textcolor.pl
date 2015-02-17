@@ -9,7 +9,7 @@ our %IRSSI = (
 	name        => 'textcolor',
 	description => 'Colors your messages',
 	license     => 'MIT',
-	url         => 'https://github.com/pbackus/irssi-textcolor/blob/master/textcolor.pl',
+	url         => 'https://raw.githubusercontent.com/pbackus/irssi-textcolor/master/textcolor.pl',
 );
 
 # English names for colors, and the corresponding control codes.
